@@ -1,0 +1,835 @@
+
+<h1>Programmier-Witze</h1>
+
+
+    ONCLICK KANN MAN ZU JEDEM HTML TAG VERWENDEN!
+    z.b. :
+    <a href="#" onclick="joke1()">Witz 1</a>
+    <a href="#" onclick="joke2()">Witz 2</a>
+    <a href="#" onclick="joke3()">Witz 2</a>
+    Jetzt sind die Links da statt die buttons.
+
+
+    <button onclick="joke1()">Witz 1</button>
+    <button onclick="joke2()">Witz 2</button>
+    <button onclick="joke3()">Witz 3</button>
+
+    <p id="joke">
+        Die Selbsthilfegruppe ,,HTML-Sonderzeichen-Probleme" trifft sich heute im groß Saal.
+    </p>
+
+    function dann bezeichnung aus dem onclick atribut im tag () {} document.getElementById('id aus dem tag').innerHTML = für die HTML ausgabe aus dem Webbroser usw.
+    <script>
+        function joke1 () {
+            document.getElementById('joke').innerHTML = 'Was macht ein Pirat am Computer? Er drückt die Entertaste!'; HTML Tag wie <b> um etwas Fett zu drucken innterHTML möglich sowie andere HTML tags!
+        }
+
+        function joke2() {
+            document.getElementById('joke').innerHTML = 'HTML-Sonderzeichen-Probleme" trifft sich heute im groß Saal.';
+        }
+
+        function joke3() {
+            document.getElementById('joke').innerHTML = 'Wo geht ein Programmierer morgens hin? Auf die Arbyte.'; Wenn mann '' durch rückwerts zeichen ` ersetzt kann man mehrere zeilen innerHTML einfügen und <br> usw z.b.
+        }
+
+        function joke3() {
+            document.getElementById('joke').innerHTML = `Wo geht ein Programmierer morgens hin? Auf die Arbyte. es ist ebenfalls möglich ein img tag für ein bild innerHTML einzufügen, dem eine classe vergeben und im css zu stylen z.b.
+            <br>
+            <img classe="funny-image" src="/kochwelt/img/funny.png">
+            `;
+
+            // Durch die Rückwärts anführungszeichen innerHTML ist es möglich
+                // in javascript mehrere html tags einzusetzten, und den Tags kann 
+                // man auch classen vergeben um sie dann im css zu verändern.
+        }
+
+
+
+        <a href="#" onclick="greet()">Greet</a>
+
+    <p id="greeting">
+        
+    </p>
+    
+    <script>
+        function greet() {
+            let x = 'Annes';   //Variable (let) x = 'Annes' der name weisst auf dem x der dann in ${x} ausgegeben wird 
+            document.getElementById('greeting').innerHTML = `Hallo ${x} Wie geht es dir?`;
+        }
+
+        ---------------------------------------------------------------------------------------------------------------
+       
+       
+        <input><button onclick="greetFromTextField()">Grüße</button>   Textfeld mit Button
+
+    <p id="greeting">
+        
+    </p>
+    
+    <script>
+        function greetFromTextField() {       //Diese funktion ruft die untere funktion auf mit 'greet(name)';
+            let name = 'Clara';
+            greet(name);
+        }
+
+
+        function greet(x) {   //das (x) ist die Variable 'Clara' und wird dann innerHTML ausgegeben
+            document.getElementById('greeting').innerHTML = `Hallo ${x} Wie geht es dir?`;
+        }
+
+
+    </script>
+
+
+
+    <h1>Programmier Witze</h1>
+    
+
+    <input id="namefield">   was du in dem eingabefeld eingibst, wird unter doc...value; im HTML ausgegeben 
+
+    <button onclick="greetFromTextField()">Grüße</button>   
+
+    <p id="greeting"> 
+        
+    </p>
+    
+    <script>
+        function greetFromTextField() { 
+            let name = document.getElementById('namefield').value;  
+            greet(name);
+        }
+
+
+        function greet(x) { 
+            document.getElementById('greeting').innerHTML = `Hallo ${x} Wie geht es dir?`;
+        }
+
+    </script>
+</script>
+
+--------------------------------------------------------------------------------------------
+
+
+<input id="number1" type="number">
+<input id="number2" type="number">
+<button onclick="add()">Addieren</button>
+
+<h1 id="headline"></h1>
+
+    
+<script>                       
+  function add(){
+    let myFirstNumber = +document.getElementById('number1').value;    // Das + zeichen hinter dem document.. lässt beide variablen miteinander Addieren
+    let mySecondNumber = +document.getElementById('number2').value;
+    let result = myFirstNumber + mySecondNumber;
+    document.getElementById('headline').innerHTML = `Das Ergebnis ist ${result}`;
+  }
+</script>
+
+--------------------------------------------------------------------------------------------
+<title>Pfannkuchen</title>
+
+    <style>
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td, table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #ddd;
+        }
+
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rezept für Pfannkuchen</h1>
+    <button onclick="addAll()">Zutat Laden</button>
+
+    <table id="table">
+        <tr>
+            <td>Menge</td>
+            <td>Name</td>
+        </tr>
+
+    </table>
+
+    <script>
+
+        function addAll() {
+            addIngredient('200g', 'Milch');
+            addIngredient('200g', 'Mehl');
+            addIngredient('200g', 'Salz');
+            addIngredient('2', 'Eier');
+        }
+        
+
+     
+        function addIngredient(menge, name) {
+            document.getElementById('table').innerHTML += `
+            <tr>
+            <td>${menge}</td>
+            <td>${name}</td>
+        </tr>
+        `;
+        }
+                        /* button durch addAll(); ersetzen und die zutaten werde direkt geladen*/
+        
+    </script>
+
+    ----------------------------------------------------------------------------------------
+
+    <h1>Rezept für Pfannkuchen</h1>
+    <button onclick="addAll()">Zutat Laden</button>
+
+    <table id="table">
+        <tr>
+            <td>Menge</td>
+            <td>Name</td>
+        </tr>
+
+    </table>
+
+    <input id="newName" type="text" placeholder="Menge Hinzufügen" min="0">
+    <input id="newMenge" type="text" placeholder="Zutat Hinzufügen" min="0">
+    <button onclick="newIngredient()">Hinzufügen</button>
+
+    <script>                                                                           /* Zutaten durcch Klicken Hinzufügen*/
+        function newIngredient(){
+            let newName = document.getElementById('newName').value;
+            let newMenge = document.getElementById('newMenge').value;
+            addIngredient(newName, newMenge);
+
+            document.getElementById('newName').value = '';
+            document.getElementById('newMenge').value = '';
+        }
+
+        function addAll() {
+            addIngredient('200g', 'Milch');
+            addIngredient('200g', 'Mehl');
+            addIngredient('200g', 'Salz');
+            addIngredient('2', 'Eier');
+        }
+
+     
+        function addIngredient(menge, name) {
+            document.getElementById('table').innerHTML += `
+            <tr>
+            <td>${menge}</td>
+            <td>${name}</td>
+        </tr>
+        `;
+        }
+    </script>
+        ------------------------------------------------------------------------------------
+
+        <script>
+        function imageOne() {
+            document.getElementById('image').src = 'bild2.jpg';
+        }
+
+        function imageTwo() {
+            document.getElementById('image').src = 'bild1.jpg'; /* Bild Ändern per Klick auf dem Butten. Dabei schreibt man ein img tag und ändert das bild auf das zweite bild per klick auf den mit dem zweiten button im function bereich .src = 'bild1';  */
+        }
+        
+    </script>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="imageTwo()">Bild2</button>
+    <button onclick="imageOne()">Bild1</button>
+    <img id="image" src="bild1.jpg">
+
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------
+
+<script>
+    function imageOne() { /* Durch setTimeout(imageTwo, 3000); definieren wir den wechsel der nächsten function um das nächste bild innerhalb 3000 milisekunden aufzurufen um sie dann in einer widerholten schleife zu versetzten. */
+        document.getElementById('image').src = 'bild1.jpg';
+        setTimeout(imageTwo, 3000);
+    }
+
+    function imageTwo() {
+        document.getElementById('image').src = 'bild2.jpg';
+        setTimeout(imagethree, 3000);
+    }
+
+    function imagethree() {
+        document.getElementById('image').src = 'bild3.jpg';
+        setTimeout(imageOne, 3000);
+    }
+    
+</script>
+<style>
+    img {
+        width: 100%;
+    }
+</style>
+</head>
+<body>   <!-- Durch <body onload="imageOne()"> ersetzen wir den Button in eine Automatische schleife ohne klick-->
+
+<button onclick="imageTwo()">Start!</button>
+<img id="image" src="bild1.jpg">
+
+</body>
+
+--------------------------------------------------------------------------------------------
+<script>
+let images = ['bild2.jpg', 'bild1.jpg', 'bild3.jpg', 'bild4.jpg', 'bild5.jpg'];
+let i = 0; // Variable definiert i = wert von 0 Beginnen. 0 bedeutet 1 und 1 bedeutet 2 usw.....
+
+function imageOne() {
+    document.getElementById('image').src = images[i]; // i hat den Wert 0
+    i++; // i++; bedeutet den Wert um 1 Erhöhen
+    setTimeout(imageTwo, 3000);
+}
+
+function imageTwo() {
+    document.getElementById('image').src = images[i]; // i hat den Wert 1
+    i++;
+    setTimeout(imagethree, 3000);
+}
+
+function imagethree() {
+    document.getElementById('image').src = images[i]; // i hat den Wert 2
+    i = 0; // Fängt wieder bei 0 an. (also imageOne 1.)
+    setTimeout(imageOne, 3000);
+}
+
+</script>
+<style>
+body {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+</style>
+</head>
+<body onload="imageOne()">
+<img id="image" src="bild1.jpg">
+
+</body>
+
+--------------------------------------------------------------------------------------------
+
+<script>
+    let images = ['bild2.jpg', 'bild1.jpg', 'bild3.jpg', 'bild4.jpg', 'bild5.jpg'];
+    let currentImage = 0;
+    
+    function start() {  // 2. diese function wird ausgeführt sobald die seite geladen wird. function start ruft die function showImage auf.
+        showImage(currentImage); // 3. showImage bekommt als Variable dieses currentImage vergeben mit dem wert 0, dadurch wird dem function parameter fonction showImage(i) das i übergeben und wird mit der Variable currentImage aufgerufen
+        currentImage++;  // 5. Im nächsten schritt wird das i um 1 erhöht mit currentImage ++;  (die Variable wird um 1 erhöht)
+
+        if (currentImage == 5) {  // 7. Mit der if abfrage unterbinden wir das die bilder von 1 immer weiter bis unendlich um 1 erhöht wird in dem wir if (currentImage == 5) die Variable unter if auf bis zu 5 geben.
+            currentImage = 0;     // 7.1 Das heisst sobald wir if (currentimage == 5) vergeben können wir innerhalb der Geschweiften klammer {} den wert der Variable wieder auf 0; setzten damit der immer von 0 um 1 erhöht wird bis 5 und wieder auf 0
+        }
+
+        setTimeout(start, 1000); // 6. mit setTimeout(start, 1000) hier wird dann die function start() nach eine millisekunde immer wieder aufgerufen, dadurch werde alle bilder nacheinander aufgerufen
+    }
+
+    function showImage(i) {
+        document.getElementById('image').src = images[i]; // 4. so wird das aller erste bild angezeigt
+        
+    }
+</script>
+<style>
+    body {
+        margin: 0;
+    }
+    
+    img {
+        width: 100%;
+    }
+</style>
+</head>
+<body onload="start()"> <!-- 1. Sobald unsere seite geladen ist wird function "start" ausgeführt-->
+
+<img id="image" src="bild1.jpg">
+    
+</body>
+
+----------------------------------------------------------------------------------------------------------
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Witze</title>
+  <script>
+    let images = ['bild2.jpg', 'bild1.jpg', 'bild3.jpg', 'bild4.jpg', 'bild5.jpg'];
+    let currentImage = 0;
+
+    function start() {
+      let millisecons = +document.getElementById('inputfield').value * 1000;
+
+      if (millisecons > 10000) { // Wenn die secunden Größer als 10 Sekunden eingegeben wird 
+        alert('Bitte kleinere Zahl eingeben'); // Kommt eine Fehlermeldung
+      } else { // Und wenn die Eingegebene Zahl kleiner und als 10 sekunden eingegeben wird, wird der Code nach dem else weiter geführt.
+
+        if (millisecons < 1000) { // Wenn die Zahl kleiner als 1 Sekunde ist 
+          alert('Bitte mindestens eine Sekunde als Zeit angeben!'); // Kommt ein fehler 
+        } else { // Und wenn nicht, dann Startet die Diashow unter dem else code
+          showImage(currentImage);
+          currentImage++;
+
+
+          if (currentImage == 5) {
+            currentImage = 0;
+          }
+
+          setTimeout(start, millisecons);
+
+        }
+      }
+    }
+
+    function showImage(i) {
+      document.getElementById('image').src = images[i];
+
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="number" id="inputfield" placeholder="Wie viele Sekunden?"> <button onclick="start()">Start</button>
+  <img id="image" src="bild1.jpg">
+
+</body>
+
+----------------------------------------------------------------------------------------------------------
+<script>
+    function insertDoors() {
+    for(let i = 1; i < 25; i++) // for= in der Geschweiften Klammer{} alles wiederholen. let i = 0; das ist der wert bei dem wir anfangen wollen. i < 10= Wiederholen solange i ist kleiner als 10. i++;= immer um einen erhöhen, in dem fall solange bs es die 10 erreicht wegen dem i < 10; 
+    document.getElementById('body').innerHTML += `<div class="door">${i}</div>`; //${i} setzt die zahlen von i bis < 25 in die divs
+}
+</script>
+
+<style>
+    body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+       .door {
+        width: 150px;
+        height: 150px;
+        background-color: yellow;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+       }
+</style>
+<body id="body" onload="insertDoors()">
+    
+</body>
+
+---------------------------------------------------------------------------------------------------------------
+
+<script>
+    let todos = ['Einkaufen', 'Putzen', 'Kochen', 'Spazieren', 'Spazieren', 'Spazieren', 'Spazieren'];
+
+function showTodos() {
+    for(let i = 0; i < todos.length; i++) { // durch den wert der Variable todos, können wir in der for Schleife i < 4; durch i < todos.length; ersetzten damit wir nicht immer den wert kleiner als x ändern müssen, wenn wir ein neues todo in Aray hinzufügen möchten.
+    document.getElementById('mylist').innerHTML += `<li>${todos[i]}</li>`;
+    }
+}
+</script>
+
+---------------------------------------------------------------------------------------------------------------
+
+<script>
+    let todos = ['Einkaufen', 'Putzen', 'Kochen', 'Spazieren'];
+
+function showTodos() {
+    document.getElementById('mylist').innerHTML = ``; //Gleiches Prinziep wie bei zeile 14.
+    for(let i = 0; i < todos.length; i++) { // durch den wert der Variable todos, können wir in der for Schleife i < 4; durch i < todos.length; ersetzten damit wir nicht immer den wert kleiner als x ändern müssen, wenn wir ein neues todo in Aray hinzufügen möchten.
+    document.getElementById('mylist').innerHTML += `<li>${todos[i]}<a href="#" onclick="deleteTodo(${i})">X</li>`;//<a href="#" onclick="deleteTodo(${i})">X Aus einem Array Löschen.
+    }
+}
+
+function addTodo() {
+    let todo = document.getElementById('myinput').value;
+    todos.push(todo); //Der liste weitere todos hinzufügen
+    showTodos(); //Nach dem Hinzufügen werden die in der Liste Angezeigt.
+    document.getElementById('myinput').value = ``; //Damit das eingabefeld nach dem Hinzufügen leer bleibt, nach .value = ``;
+}
+
+function deleteTodo(position) {
+    todos.splice(position, 1); // Aus einem Array Löschen.
+    showTodos();
+}
+</script>
+
+<body onload="showTodos()">
+    <ul id="mylist"></ul>
+    <input id="myinput"> <button onclick="addTodo()">Hinzufügen</button>
+</body>
+
+---------------------------------------------------------------------------------------------------------------
+
+<script>
+    function calc() {
+    let number = +document.getElementById('input').value; //Durch das + weiss das eingabefeld das es sich um eine zahl handelt, selbst wenn da Text steht.
+    
+
+    alert(getResultText(number, powerOf2(number))); //Die tiefste klammer wird immer zuerst gelöst. Im alert wwird dir dein return rausgegeben.
+}   //Die Variablen wie 'number' hat nichts mit den Variablen in den Anderen Functionen zutun. 'number' hat nur was mit der function zutun in den geschweiften klammern.
+
+function powerOf2(x) { //x=2
+    return x*x; // Aus einer Funktion Zurück geben. x * x = 2*2
+}
+
+function getResultText(number, result) {// number = 2, result = 4        Nochmal die variablen number und result sind nur unter dieser Function Möglich.
+    return `The result of ${number}² is ${result}`; // return gibt den text `The result of ${number}² is ${result}` zurück mit den eigebenen Variablen
+}
+</script>
+
+<body>
+    <input type="text" id="input"> <button onclick="calc()">Calc</button>
+</body>
+---------------------------------------------------------------------------------------------------------------
+
+<script>
+    function hide(id) {
+    document.getElementById(id).classList.add('d-none');
+}
+
+function show(id) {
+    document.getElementById(id).classList.remove('d-none');
+}
+</script>
+
+<style>
+        .rectangle {
+            height: 150px;
+            width: 150px;
+            background-color: yellow;
+            margin: 8px;
+        }
+
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button onclick="show('1')">1</button>
+<button onclick="show('2')">2</button>
+<button onclick="show('3')">3</button>
+<button onclick="show('4')">4</button>
+
+    <div id="1" onclick="hide('1')" class="rectangle"></div>
+    <div id="2" onclick="hide('2')" class="rectangle"></div>
+    <div id="3" onclick="hide('3')" class="rectangle"></div>
+    <div id="4" onclick="hide('4')" class="rectangle"></div>
+</body>
+
+---------------------------------------------------------------------------------------------------------------
+
+Variablen Speichern:
+
+<script>
+    let name;
+
+
+function saveName() {
+    name = document.getElementById('input').value;
+
+    localStorage.setItem('name', name); // Dadurch wird eine Variable gespeichert.
+
+    document.getElementById('headline').innerHTML = `Hallo ${name}`;
+}
+
+function loadName() {
+    name = localStorage.getItem('name'); // Abfrage wer zuletzt eingegeben wurde.
+    document.getElementById('headline').innerHTML = `Zuletzt war ${name} hier!`;
+
+}
+</script>
+
+<body>
+<h1 id="headline"></h1>
+
+    <button onclick="loadName()">Wer war zuletzt hier?</button>
+
+    <input id="input" type="text">
+    <button onclick="saveName()">Speichern</button>
+</body>
+
+---------------------------------------------------------------------------------------------------------------
+
+Array permanent speichern:
+
+<script>
+    let names = [];
+
+function loadName() {
+    name = getArray ('names'); // Abfrage wer zuletzt eingegeben wurde. Alle die in einem Array gepackt wurden durch das eingeben im textfeld.
+    document.getElementById('headline').innerHTML = `Zuletzt war ${name} hier!`;
+}
+
+function saveName() {
+    let name = document.getElementById('input').value;
+    names.push(name);
+    saveArrayToLocalStorage('names', names); //Function Speicher.
+
+    document.getElementById('headline').innerHTML = `Hallo ${names}`;
+}
+
+function saveArrayToLocalStorage(key, array) {
+    localStorage.setItem(key, JSON.stringify(array)); //Function laden.
+}
+
+function getArray(key) {
+    return JSON.parse(localStorage.getItem(key)); // Das gibt uns nur den Text zurück. JSON.parse Wandelt alles in einem Array um.
+}
+</script>
+
+<body>
+<h1 id="headline"></h1>
+
+    <button onclick="loadName()">Wer war zuletzt hier?</button>
+
+    <input id="input" type="text">
+    <button onclick="saveName()">Hinzufügen</button>
+</body>
+
+---------------------------------------------------------------------------------------------------------------
+
+Variablen Scope:
+
+<script>
+    let x = 10; // wenn die variable ausserhalb deklariert wird dann ist sie eine globale Variable.
+
+function myFunction() {
+  let y = 20; // let = deklariert, ins leben gerufen. diese variable ist nur für die geschweeiften klammern.
+  console.log(y);
+}
+
+myFunction();
+console.log(y); // Globale Variable
+
+let y = 10;
+
+function myFunction() {
+  y = 20; // wenn hier nur ein wert Deklariert wird, übernimmt er den wert von y = 20
+  console.log(y);
+}
+
+myFunction();
+console.log(y);
+
+function myFunction() {
+    let x = 10;
+    if (x == 10) {
+      let x = 20; // der innerste wert innerhalb der geschweiften klammern wird zu erst aufgerufen.
+      console.log(x);
+    }
+    console.log(x);
+  }
+  
+  myFunction();
+  console.log(x);
+
+  let a = 10;
+
+function outerFunction() {
+  let b = 20;
+
+  innerFunction(40); //(40, b)
+}
+
+function innerFunction(c) { // let c = 40 wegen innerFunction(40); und somit 40, b
+  let d = 30;
+  console.log(`a=${a}, b=${b}, c=${c}, d=${d}`); // der wert b wird nicht übergeben bis nach der (40, b) nicht der wert neben der zahl angegeben wird.
+}
+
+outerFunction();
+</script>
+
+---------------------------------------------------------------------------------------------------------------
+
+Bundesländer :
+
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 10px;
+}
+
+<body onload="render()">
+
+    <div id="content">
+
+
+    </div>
+</body>
+
+let bundeslaender = [ 
+    {
+        "name": "Baden-Württemberg",
+        "population": 11.1,
+        "url": "https://www.baden-wuerttemberg.de/de/startseite/",
+        "comments": []
+    },
+    {
+        "name": "Bayern",
+        "population": 13.1,
+        "url": "https://www.bayern.de/",
+        "comments": ['Tolles Wetter und gute Wander-Routen', 'München ist eine schöne Stadt']
+    },
+    {
+        "name": "Berlin",
+        "population": 3.7,
+        "url": "https://www.berlin.de/",
+        "comments": []
+    },
+    {
+        "name": "Brandenburg",
+        "population": 2.5,
+        "url": "https://www.brandenburg.de/",
+        "comments": []
+    },
+    {
+        "name": "Bremen",
+        "population": 0.7,
+        "url": "https://www.bremen.de/",
+        "comments": ['Die Stadtmusikanten haben mir schon immer gefallen!']
+    },
+    {
+        "name": "Hamburg",
+        "population": 1.8,
+        "url": "https://www.hamburg.de/",
+        "comments": ['Ein wirklich tolles Bundesland']
+    },
+    {
+        "name": "Hessen"
+        "population": 6.3,
+        "url": "https://www.hessen.de/",
+        "comments": []
+    },
+    {
+        "name": "Mecklenburg-Vorpommern",
+        "population": 1.6,
+        "url": "https://www.mecklenburg-vorpommern.de/startseite/",
+        "comments": []
+    },
+    {
+        "name": "Niedersachsen",
+        "population": 8,
+        "url": "https://www.niedersachsen.de/startseite/",
+        "comments": []
+    },
+    {
+        "name": "Nordrhein-Westfalen",
+        "population": 17.9,
+        "url": "https://www.land.nrw/",
+        "comments": []
+    },
+    {
+        "name": "Rheinland-Pfalz",
+        "population": 4.1,
+        "url": "https://www.rlp.de/de/startseite/",
+        "comments": []
+    },
+    {
+        "name": "Saarland",
+        "population": 1,
+        "url": "https://www.saarland.de/DE/home/home_node.html",
+        "comments": []
+    },
+    {
+        "name": "Sachsen",
+        "population": 4.1,
+        "url": "https://www.sachsen.de/",
+        "comments": []
+    },
+    {
+        "name": "Sachsen-Anhalt",
+        "population": 2.2,
+        "url": "https://www.sachsen-anhalt.de/startseite/",
+        "comments": []
+    },
+    {
+        "name": "Schleswig-Holstein",
+        "population": 2.9,
+        "url": "https://www.schleswig-holstein.de/DE/Home/home_node.html",
+        "comments": []
+    },
+    {
+        "name": "Thüringen",
+        "population": 2.1,
+        "url": "https://thueringen.de/",
+        "comments": []
+    }
+];
+
+function render(){
+    let content = document.getElementById('content');
+    content.innerHTML = '';
+
+    for (let i = 0; i < bundeslaender.length; i++) {
+        const land = bundeslaender[i];
+        content.innerHTML += `
+            <div class="card">
+                <h2>${land['name']}</h2>
+
+                <div id="landcontent${i}"></div>
+                <input id="input${i}"><button onclick="addComment(${i})">OK</button>
+            </div>
+        `;
+
+        let landcontent = document.getElementById(`landcontent${i}`);
+        
+        for (let j = 0; j < land['comments'].length; j++) {
+            const comment = land['comments'][j];
+            landcontent.innerHTML += `<div>${comment}</div>`;
+        }
+    
+    }
+}
+
+
+function addComment(index) {
+    let input = document.getElementById(`input${index}`);
+    bundeslaender[index]['comments'].push(input.value);
+    render(); //Damit die eingegebenen Kommentare angezeigt bzw. hochgeladen werden.
+    input.value = ''; // Damit das input feld nach der eingabe wieder leer ist.
+}
